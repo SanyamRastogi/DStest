@@ -231,6 +231,7 @@ namespace DStest
             sq.Push(10);
             sq.Push(20);
             sq.Push(30);
+            sq.Push(40);
             Console.WriteLine(sq.Top());
             sq.Pop();
             sq.Push(30);
