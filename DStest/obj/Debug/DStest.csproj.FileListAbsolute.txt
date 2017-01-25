@@ -1,0 +1,5 @@
+c:\users\user\documents\visual studio 2015\Projects\DStest\DStest\bin\Debug\DStest.exe
+c:\users\user\documents\visual studio 2015\Projects\DStest\DStest\bin\Debug\DStest.pdb
+c:\users\user\documents\visual studio 2015\Projects\DStest\DStest\obj\Debug\DStest.csprojResolveAssemblyReference.cache
+c:\users\user\documents\visual studio 2015\Projects\DStest\DStest\obj\Debug\DStest.exe
+c:\users\user\documents\visual studio 2015\Projects\DStest\DStest\obj\Debug\DStest.pdb
