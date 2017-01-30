@@ -42,6 +42,33 @@ namespace DStest
 
     class Program
     {
+        public static int HistogramArea(int[] hist, int n)
+        {
+            Stack<int> s = new Stack<int>();
+            int maxarea = 0, tp, iter_area = 0, i = 0;
+            while (i < n)
+            {
+                if (s.Count() == 0 || hist[s.Peek()] <= hist[i])
+                    s.Push(i++);
+                else
+                {
+                    tp = s.Peek();
+                    s.Pop();
+                    iter_area = hist[tp] * ((s.Count() == 0) ? i : (i - s.Peek() - 1));
+                    if (maxarea < iter_area)
+                        maxarea = iter_area;
+                }
+            }
+            while (s.Count() != 0)
+            {
+                tp = s.Peek();
+                s.Pop();
+                iter_area = hist[tp] * ((s.Count() == 0) ? i : (i - s.Peek() - 1));
+                if (maxarea < iter_area)
+                    maxarea = iter_area;
+            }
+            return maxarea;
+        }
 
         public static int MinCoinReq(int[] arr, int n, int amt)
         {
@@ -220,6 +247,7 @@ namespace DStest
                 Console.WriteLine(key); // xbc
                                         //Console.WriteLine(ht["xbc"]); // Not found!
             }
+            Console.WriteLine("Max Area"+ HistogramArea(new int[] { 6, 2, 5, 4, 5, 2, 6 }, 7));
             Console.WriteLine("min coins" + MinCoinReq(new int[] { 1, 5, 10 }, 3, 30));
             string fromstr = "anagram", tostr = "grammar";
             Console.WriteLine(ReplaceChartoBeSame(fromstr, tostr, 1));
