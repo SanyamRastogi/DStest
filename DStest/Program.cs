@@ -42,6 +42,19 @@ namespace DStest
 
     class Program
     {
+        public static int CountWays(int n)
+        {
+            int[] table = new int[n + 1];
+            table[0] = 1;
+            for (int i = 1; i < n; i++)
+            {
+                for (int j = i; j <= n; j++)
+                {
+                    table[j] += table[j - i];
+                }
+            }
+            return table[n];
+        }
         public static int HistogramArea(int[] hist, int n)
         {
             Stack<int> s = new Stack<int>();
@@ -209,7 +222,6 @@ namespace DStest
 
         public static string ReplaceChartoBeSame(string fromstr, string tostr, int k)
         {
-            int res = 0;
             Dictionary<char, int> hs = new Dictionary<char, int>();
             for (int i = 0; i < fromstr.Length; i++)
             {
@@ -247,6 +259,7 @@ namespace DStest
                 Console.WriteLine(key); // xbc
                                         //Console.WriteLine(ht["xbc"]); // Not found!
             }
+            Console.WriteLine("max ways"+CountWays(5));
             Console.WriteLine("Max Area"+ HistogramArea(new int[] { 6, 2, 5, 4, 5, 2, 6 }, 7));
             Console.WriteLine("min coins" + MinCoinReq(new int[] { 1, 5, 10 }, 3, 30));
             string fromstr = "anagram", tostr = "grammar";
